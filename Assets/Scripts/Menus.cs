@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menus : MonoBehaviour
 {
+    // Loads in the various difficulty modes, and also quits the application.
     public void PlayGameEasy()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

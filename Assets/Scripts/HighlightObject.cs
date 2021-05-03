@@ -18,6 +18,7 @@ public class HighlightObject : MonoBehaviour
         rend.sharedMaterial = material[0];
     }
 
+    // Highlights an object when a player mouses over it.
     void OnMouseEnter()
     {
         if ((gameObject.tag == "CanMove" || gameObject.tag == "Player") && isHighlighted == false)
@@ -28,6 +29,7 @@ public class HighlightObject : MonoBehaviour
         }
     }
 
+    // Returns a highlighted object back to its original color.
     void OnMouseExit()
     {
         if ((gameObject.tag == "CanMove" || gameObject.tag == "Player") && isHighlighted == true)
@@ -38,6 +40,7 @@ public class HighlightObject : MonoBehaviour
         }
     }
 
+    // Selects an object for dragging.
     void OnMouseDown()
     {
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
@@ -54,6 +57,7 @@ public class HighlightObject : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 
+    // Updates the selected object's position relative to the cursor.
     void OnMouseDrag()
     {
         transform.position = GetMouseWorldPos() + mOffset;
